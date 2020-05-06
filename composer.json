@@ -2,7 +2,7 @@
 	"name": "rits-tecnologia/bling-php-sdk",
 	"description": "Bling PHP SDK",
 	"keywords": ["bling", "api", "sdk"],
-	"license": "MIT License",
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Juciano Araujo",
