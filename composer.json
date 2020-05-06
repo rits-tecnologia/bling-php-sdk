@@ -1,0 +1,32 @@
+{
+	"name": "rits-tecnologia/bling-php-sdk",
+	"description": "Bling PHP SDK",
+	"keywords": ["bling", "api", "sdk"],
+	"license": "MIT License",
+	"authors": [
+		{
+			"name": "Juciano Araujo",
+			"email": "jucianoaraujo@rits.com.br"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Bling\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Bling\\Tests\\": "tests"
+		}
+	},
+	"require": {
+		"php": "^7.3",
+		"guzzlehttp/guzzle": "^6.5",
+		"spatie/array-to-xml": "^2.11"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^8.0",
+		"symfony/dotenv": "^5.0",
+		"nesbot/carbon": "^2.33"
+	}
+}
