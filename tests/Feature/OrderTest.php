@@ -5,7 +5,7 @@ namespace Bling\Tests\Feature;
 use Bling\Tests\TestCase;
 use Carbon\Carbon;
 
-class OrdersTest extends TestCase
+class OrderTest extends TestCase
 {
     public function testCanCreateOrder()
     {

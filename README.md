@@ -15,19 +15,26 @@ composer require rits-tecnologia/bling-php-sdk
 ```php
 $bling = new Bling(env('BLING_API_KEY'));
 
-// repositories endpoints
+// repositories
+$bling->products();
 $bling->orders();
-$bling->invoices();
+$bling->nfes();
+$bling->nfces();
+$bling->nfses();
+```
 
+### Examples
+
+```php
 // list all orders
 $bling->orders()->all([
-    'dataEmissao' => Carbon::now()->subYear()->format('d/m/Y') .' TO ' . Carbon::now()->format('d/m/Y')
+    'dataEmissao' => '01/01/2020 TO 31/12/2020'
 ]);
 
 // find order
 $bling->orders()->find(1);
 
-// create new order
+// create new order and NF-e
 $bling->orders()->create([
     'pedido' => [
         'cliente' => [
@@ -118,7 +125,7 @@ $bling->orders()->create([
         ],
         'vlr_frete' => '15',
         'vlr_desconto' => '10',
-        'obs' => 'Testando o campo observações do pedido '.Carbon::now(),
+        'obs' => 'Testando o campo observações do pedido',
         'obs_internas' => 'Testando o campo observações internas do pedido'
     ],
 ], true);

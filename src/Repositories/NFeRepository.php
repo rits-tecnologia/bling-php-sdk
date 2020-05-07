@@ -4,7 +4,7 @@ namespace Bling\Repositories;
 
 use Spatie\ArrayToXml\ArrayToXml;
 
-class InvoiceRepository extends BaseRepository
+class NFeRepository extends BaseRepository
 {
     public function all(array $filters = []): ?array
     {

@@ -5,11 +5,11 @@ namespace Bling\Tests\Feature;
 use Bling\Tests\TestCase;
 use Carbon\Carbon;
 
-class InvoicesTest extends TestCase
+class NFeTest extends TestCase
 {
-    public function testCanCreateInvoice()
+    public function testCanCreateNFe()
     {
-        $response = $this->bling->invoices()->create([
+        $response = $this->bling->nfes()->create([
             'pedido' => [
                 'cliente' => [
                     'nome' => 'Organisys Software',
@@ -145,9 +145,9 @@ class InvoicesTest extends TestCase
         $this->assertArrayHasKey('notasfiscais', $response['retorno'] ?? []);
     }
 
-    public function testCanListInvoices()
+    public function testCanListNFes()
     {
-        $response = $this->bling->invoices()->all([
+        $response = $this->bling->nfes()->all([
             'dataEmissao' => Carbon::now()->subYear()->format('d/m/Y H:i:s') .' TO ' . Carbon::now()->format('d/m/Y H:i:s')
         ]);
 
@@ -156,18 +156,18 @@ class InvoicesTest extends TestCase
         $this->assertArrayHasKey('notasfiscais', $response['retorno'] ?? []);
     }
 
-    public function testCanFindInvoice()
+    public function testCanFindNFe()
     {
-        $response = $this->bling->invoices()->find(1, 1);
+        $response = $this->bling->nfes()->find(1, 1);
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('retorno', $response);
         $this->assertArrayHasKey('notasfiscais', $response['retorno'] ?? []);
     }
 
-    public function testCanSendInvoice()
+    public function testCanSendNFe()
     {
-        $response = $this->bling->invoices()->send(1, 1);
+        $response = $this->bling->nfes()->send(1, 1);
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('retorno', $response);

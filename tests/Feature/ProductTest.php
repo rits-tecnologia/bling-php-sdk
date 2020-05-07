@@ -5,7 +5,7 @@ namespace Bling\Tests\Feature;
 use Bling\Tests\TestCase;
 use Carbon\Carbon;
 
-class ProductsTest extends TestCase
+class ProductTest extends TestCase
 {
     public function testCanCreateUpdateAndDeleteProduct()
     {
