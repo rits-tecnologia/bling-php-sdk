@@ -4,6 +4,7 @@ namespace Bling;
 
 use Bling\API\Client;
 use Bling\Repositories\CTeRepository;
+use Bling\Repositories\LogisticsRepository;
 use Bling\Repositories\NFCeRepository;
 use Bling\Repositories\NFeRepository;
 use Bling\Repositories\OrderRepository;
@@ -40,6 +41,11 @@ class Bling {
     public function orders(): OrderRepository
     {
         return new OrderRepository($this->client);
+    }
+
+    public function logistics(): LogisticsRepository
+    {
+        return new LogisticsRepository($this->client);
     }
 
     public function nfes(): NFeRepository

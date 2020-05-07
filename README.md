@@ -18,6 +18,7 @@ $bling = new Bling(env('BLING_API_KEY'));
 // repositories
 $bling->products();
 $bling->orders();
+$bling->logistics();
 $bling->nfes();
 $bling->nfces();
 $bling->nfses();

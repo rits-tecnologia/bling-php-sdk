@@ -126,7 +126,7 @@ class OrderTest extends TestCase
     {
         $response = $this->bling->orders()->all([
             'dataEmissao' => Carbon::now()->subYear()->format('d/m/Y') .' TO ' . Carbon::now()->format('d/m/Y')
-        ]);
+        ], true);
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('retorno', $response);
@@ -135,7 +135,7 @@ class OrderTest extends TestCase
 
     public function testCanFindOrder()
     {
-        $response = $this->bling->orders()->find(1);
+        $response = $this->bling->orders()->find(1, true);
 
         $this->assertIsArray($response);
         $this->assertArrayHasKey('retorno', $response);
