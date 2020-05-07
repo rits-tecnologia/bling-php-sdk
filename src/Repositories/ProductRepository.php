@@ -85,7 +85,7 @@ class ProductRepository extends BaseRepository
         return $this->client->post('produto/json/', $options);
     }
 
-    public function update(int $numero, array $params): ?array
+    public function update(string $codigo, array $params): ?array
     {
         $options = [];
 
@@ -95,11 +95,11 @@ class ProductRepository extends BaseRepository
 
         $options['xml'] = $xml;
 
-        return $this->client->post("pedido/$numero/json/", $options);
+        return $this->client->post("produto/$codigo/json/", $options);
     }
 
-    public function delete(int $codigo): ?array
+    public function delete(string $codigo): ?array
     {
-        return $this->client->delete("produto/$codigo");
+        return $this->client->delete("produto/$codigo/json/");
     }
 }

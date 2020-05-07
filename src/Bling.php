@@ -5,6 +5,7 @@ namespace Bling;
 use Bling\API\Client;
 use Bling\Repositories\InvoiceRepository;
 use Bling\Repositories\OrderRepository;
+use Bling\Repositories\ProductRepository;
 
 class Bling {
 
@@ -36,5 +37,10 @@ class Bling {
     public function invoices(): InvoiceRepository
     {
         return new InvoiceRepository($this->client);
+    }
+
+    public function products(): ProductRepository
+    {
+        return new ProductRepository($this->client);
     }
 }
